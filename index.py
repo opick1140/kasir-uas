@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for
+import os
 
-app = Flask(__name__)
+# Tentukan path ke folder templates yang sejajar dengan api/
+template_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, 'templates'))
+app = Flask(__name__, template_folder=template_dir)
 pesanan = []
 
 @app.route("/", methods=["GET", "POST"])
