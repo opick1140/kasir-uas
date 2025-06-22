@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kasir - Daftar Pesanan</title>
+</head>
+<body>
+    <h2>🧾 Daftar Pesanan</h2>
+    {% if pesanan %}
+        <ul>
+        {% for item in pesanan %}
+            <li>{{ item }}</li>
+        {% endfor %}
+        </ul>
+        <form method="post">
+            <button type="submit">Konfirmasi Pesanan Pertama</button>
+        </form>
+    {% else %}
+        <p><i>Tidak ada pesanan</i></p>
+    {% endif %}
+    <br>
+    <a href="/">⬅️ Kembali ke Customer</a>
+</body>
+</html>
